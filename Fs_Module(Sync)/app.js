@@ -16,7 +16,10 @@ console.log(first,second);// thishappend bcz of readFileSync
 
 // Now we have both text files now why dont we create new text files for which i needed writeFileSync(for which we provide two values two arguments one in which is file name and if the file is not there then of course node will create that file and you will see that in a second and the second one is the vakue that we wanna pass )
 
-writeFileSync('../content/result-sync.txt',`Here is the result : ${first}, ${second}`, {flag: 'a'}) // now if the file is not there node will create a new filen and if the file is already their node by default overright the file
+writeFileSync('../content/result-sync.txt',`Here is the result : ${first}, ${second}`, // fumctionalty
+ {flag: 'a'}) 
+
+// now if the file is not there node will create a new filen and if the file is already their node by default overright the file
 
 // now if you want to append the file just pass in one more argument i have the fird]st i have the value that i would like to setup and third one is an object basically an object an options object and here the property name is flag which is an option now it will overright the file
 
