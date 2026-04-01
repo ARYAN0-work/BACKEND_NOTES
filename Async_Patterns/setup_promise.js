@@ -47,6 +47,40 @@ readFile('../content/first.txt','utf8',(err,data)=>{
         console.log(data);
     }
 })
+
+What is a Promise (simple meaning)
+
+A Promise is just:
+
+👉 “I will give you a result later (not now)”
+
+Think of it like ordering food:
+
+You order → pending
+Food arrives → resolved
+Restaurant cancels → rejected
+
+So a Promise has 3 states:
+
+⏳ Pending
+✅ Resolved (success)
+❌ Rejected (error)
+
+Why we use Promises
+
+Because JavaScript is asynchronous.
+
+Example:
+
+Reading file
+API call
+Database
+
+These take time.
+
+Without promises → messy callbacks 😵
+With promises → clean .then() and .catch() 😎
+
     */
 
 
