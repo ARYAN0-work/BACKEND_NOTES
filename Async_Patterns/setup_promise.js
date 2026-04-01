@@ -5,11 +5,11 @@
 const {readFile} = require('fs')
 const { result } = require('lodash')
 
-const getText =(path)=>{
-    return new Promise((resolve,reject)=>{
-readFile('../content/first.txt','utf8',(err,data)=>{
-    if (err) {
-        reject(err)
+const getText =(path)=>{ // you made a fn getText and it take a input path[file location]
+    return new Promise((resolve,reject)=>{ // creatibg a new promise has 2 outcomes
+readFile(path,'utf8',(err,data)=>{// i called readfile | file location | read as text | call back[if something else,file  content]
+    if (err) { // if file rading fails call  reject(err)
+        reject(err) // this sends data to .then()
     } else{
        resolve(data)
     }
@@ -17,9 +17,22 @@ readFile('../content/first.txt','utf8',(err,data)=>{
     })
 } 
 
-getText('../content/first.txt')
-.then((result)=> console.log(result))
-.catch((err)=> console.log(err))
+getText('../content/first.txt') // calling our fn and returning promise
+.then((data)=> console.log(data)) // handling success = > data = file content
+.catch((err)=> console.log(err)) // if promise fails
+
+/*
+Big Picture (VERY IMPORTANT)
+
+Flow of your code:
+
+getText()
+   ↓
+readFile()
+   ↓
+(err?) → reject → .catch()
+(data?) → resolve → .then()
+*/
 
 
 // this getetxt will take path bcz it wants to read two files nd write one => make file async for much clean
