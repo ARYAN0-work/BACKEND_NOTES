@@ -7,3 +7,6 @@
 2. also you can export that while defing a new variable
 
 3. we can import all that thing using require and connect them in a file.
+
+
+4. also we can invoke a fn and then we can export and rquire that thing 
